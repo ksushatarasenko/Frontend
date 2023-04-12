@@ -177,8 +177,7 @@ let array = [
     table.style.textAlignLast = "center"
 
     head.style.backgroundColor = "lightgray"; 
-    head.style.fontWeight = "bold"; // жирный шрифт заголовка
-    
+   
     
 
     document.body.appendChild(table);
