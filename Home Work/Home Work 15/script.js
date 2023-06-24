@@ -4,7 +4,7 @@ async function getUser(id){
             fetch(`https://jsonplaceholder.typicode.com/users/${id}`),
             fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`),
         ]);
-        if(!userDataRes.ok && !postsDataRes.ok){
+        if(!userDataRes.ok || !postsDataRes.ok){
             throw new Error("Такого пользователя нет.");
         }
 
@@ -98,7 +98,7 @@ btnBack.onclick = () => {
     container.innerHTML = "";
     addCard(id);
 }else{
-    container.innerText = "Такого USER нет"
+    container.innerText = "ТАКОГО ПОЛЬЗОВАТЕЛЯ  НЕТ"
 }
 };
 btnNext.onclick = () => { 
