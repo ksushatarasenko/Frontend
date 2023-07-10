@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import "_variabes";
+@import "_mixins";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.landing {
+    margin: 0 auto;
+    max-width: 1400px;
+    font-family: $text-Lato;
+    margin-bottom: 5%;
+    color: $blue-color;
+    }
+    
+    // ------------ header start -----------------
+    .nav-bar{
+        @include flexible();
+        height: 88px;
+        
+        &__title{
+            margin-right: auto;
+            margin-left: 7%;
+            color: #0D5EBA;
+            font-size: 18px;
+        }
+        &__menu{
+            margin-left: auto;
+            margin-right: -5%;
+           
+            &__home,&__shop, &__services, &__about, &__contact{
+                color: #343434;
+                font-size: 16px;
+                margin: 28px;
+                text-decoration: none;
+            }
+            
+        }
+        &__top-nav{
+            margin-left: auto;
+            margin-right: 6%;
+            cursor: pointer;
+        }
+    }
+// ------------- 2 SHOP BY JEWELRY-----------
+.modul2-shop {
+    @include flexible();  
+    &__wrapper-modul2{
+        width: 1245px;
+        height: 379px;
+        margin-bottom: 5%;
+        &__images {
+            display: grid;
+            grid-template-columns: repeat(5, 234px);
+            gap: 20px;
+            figure{
+                @include filling();
+                figcaption {
+                text-align: center;
+                font-size: 18px;
+                @include indent-from-image;
+                figcaption{
+                    font-weight: lighter;
+                }
+                }
+            }       
+        }    
+        &__title {            
+            @include title;
+            @include indent-from-text-title;
+        }
+    }
+    
+}
+//--------- 3 HAND CRAFTED FINE PIECES--------
+    .modul3-hand-crafted{
+    margin: $margin;
+    width: 100%;
+    height: 682px;
+    display: grid;
+    grid-template-columns: 635px 765px;
+        &__title-container{
+            background-color: $blue-color;
+            color: white;
+            @include filling();
+            .modul3-hand-crafted__title{
+                width: 684px;
+                height: 344px;
+                margin-left: 12%;
+                margin-top: 20%;
+                h2{
+                    font-size: 54px;
+                }
+                p {
+                    margin: 25px 0 25px 0px;
+                    line-height: 1.3;
+                    font-size: 28px;
+                }
+                button{
+                    @include white_button();
+                    
+                }
+            }
+        }
+        &__img{
+            img{
+                  @include filling();
+            }
+        }
+    }
+        // ----------------- 4 OUR LATEST JEWELRY ------------------
+    .modul4-our-latest{
+        margin: $margin;
+        // @include flexible();
+        &__title{
+            @include title();
+            margin: $margin-left; 
+            @include indent-from-text-title; 
+        }
+
+        &__button{
+            @include flexible();
+        }
+        button{
+            @include blue_button();
+        }
+        }
+    
+    // -------------------- 4 5 6  images--------------------
+    .modul6-our-servis__images, .modul4-our-latest__images, .modul5-customer__card {
+            display: grid;
+            grid-template-columns:repeat(3, 392px);
+            gap: 40px;
+            margin: $margin-left;
+    }
+// --------------- 5 CUSTOMER REVIEWS --------------------
+    .modul5-customer {
+        margin: $margin;
+        &__title {
+            margin: $margin-left;
+            @include title();
+            @include  indent-from-text-title;
+        }
+        
+    }
+    //  ----------- 6 OUR SERVICES --------------
+    .modul6-our-servis {
+        margin-bottom: 70px;
+        &__title{
+            @include title();
+            margin: $margin-left;
+            @include  indent-from-text-title;
+        }
+        &__images {
+
+            figcaption {
+                text-align: center;
+                font-size: 24px;
+                @include indent-from-image;
+            }
+        }
+        &__button {
+            @include flexible();
+        }
+        button {
+            @include blue_button();          
+        }       
+    }
+// ---------------------------- footer -----------------
+    .footer-wraper{
+        background-color: #B8E0EF;
+        max-height: 800px;
+        .footer-section7__glavnoe{
+            width: 944px;          
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-left: calc(50% - 944px/2);
+            padding-top: 60px;
+        
+            .section7-right{
+                background-color: white;
+                height: 400px;
+                @include flexible();
+                @include filling();
+                
+                &__info{
+                    width: 362px;
+                    text-align: center;
+                    h3{
+                        @include title();
+                        margin: 10px auto;
+                    }
+                    p {
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 16px;
+                        line-height: 22px;
+                        margin: 10px auto;
+                        color: #343434;
+                    }
+
+                    button{
+                        @include blue_button();
+                        background-size: cover;
+                        margin: 10px auto;
+                    }
+                }
+               
+            }
+            .section7-left {
+                img {
+                    @include filling();                 
+                }
+            }        
+        }
+
+        .footer-menu{
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(3, 230px) ;
+            margin: $margin-left;
+            &__product, &__resouces, &__company {
+                h4{
+                    font-size: 21px;
+                    color:  #343434;
+                    margin: 15px 0 15px 0;
+                }
+                a{
+                    color:$color-foot-menu;
+                    font-size: 16px;
+                    line-height: 32px;
+                    text-decoration: none;
+                }
+            }
+            
+        }
+        .line{       
+            border: 1px solid rgba(146, 159, 168, 0.35);
+            margin-bottom: 0px;
+        }
+        .footer-down{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            margin: 0 4% 0 8%;
+            &__social-media{
+                width: 220px;
+                display: grid;
+                grid-template-columns: repeat(4, 4fr);
+                gap: 10px;
+                img{
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+
+    }
+    // ----------------------------------------
